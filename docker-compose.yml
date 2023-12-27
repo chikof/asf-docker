@@ -7,7 +7,6 @@ services:
     volumes:
       - ./config:/app/config
       - ./plugins:/app/plugins/custom
-      - /tmp/ASF
     ports:
       - "127.0.0.1:1242:1242"
       - "[::1]:1242:1242"
