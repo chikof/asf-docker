@@ -1,8 +1,7 @@
 FROM alpine
 
-# Since the wget version included in Alpine is a small version, we also install curl (the dotnet script will use it)
-RUN apt install --no-cache bash curl libc6-compat libgcc icu-libs krb5-libs libssl1.1 libstdc++ zlib
-RUN apt install --no-cache libgdiplus --repository https://dl-3.alpinelinux.org/alpine/edge/testing/
+RUN apt-get install --no-cache bash curl libc6-compat libgcc icu-libs krb5-libs libssl1.1 libstdc++ zlib
+RUN apt-get install --no-cache libgdiplus --repository https://dl-3.alpinelinux.org/alpine/edge/testing/
 RUN wget -q https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh -O /tmp/dotnet-install.sh
 RUN chmod +x /tmp/dotnet-install.sh
 RUN /tmp/dotnet-install.sh --runtime aspnetcore -v 5.0.0
