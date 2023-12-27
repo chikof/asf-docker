@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  archisteamfarm:
+    image: justarchi/archisteamfarm:latest
+    restart: unless-stopped
+    volumes:
+      - ./config:/app/config
+      - ./plugins:/app/plugins/custom
+      - /tmp/ASF
+    ports:
+      - "127.0.0.1:1242:1242"
+      - "[::1]:1242:1242"
+    environment:
+      - ASPNETCORE_URLS=http://*:1242
+      - ASPNETCORE_ENVIRONMENT=Production
+    command: ["--no-config-migrate"]  # Adjust this line based on your specific requirements
+

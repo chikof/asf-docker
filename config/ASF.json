@@ -1,0 +1,5 @@
+{
+	"AutoRestart": false,
+	"IPC": true,
+	"Headless": true
+}
