@@ -8,7 +8,7 @@ services:
       - ./config:/app/config
       - ./plugins:/app/plugins/custom
     ports:
-      - "127.0.0.1:1242:8080"
+      - "127.0.0.1:8080:1242"
     environment:
       - ASPNETCORE_URLS=http://*:1242
       - ASPNETCORE_ENVIRONMENT=Production
